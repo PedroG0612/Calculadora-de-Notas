@@ -1,23 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de notas</title>
-    <link rel="icon" href="iconeEscola.jpg">
-</head>
-<body>
-   <h1 id="titulo">Portal do professor</h1>
-    <h3 id="subtitulo">Calculadora de notas</h3>
-<input type="text" id="nome" placeholder="Digite o nome do aluno">
-<input type="text" id="licao" placeholder="Digite a atividade">
-<input type="password" id="nota" placeholder="Digite a nota">
-<button id="botao">Calcular</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculador de Notas - NAPIE</title>
+    <link rel="icon" href="./img/iconeDoSite.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/Captura de tela 2025-11-12 134254.png" alt="Logo NAPIE" />
+      <h3>NAPIE - Educação</h3>
+    </header>
 
-<footer>
-    <p>Grupo do Noah - 2025</p>
-</footer>
+    <main>
+      <h1 id="titulo">Portal do Professor</h1>
+      <h3 id="subtitulo">Calculador de Notas</h3>
 
+      <label for="nome">Nome do aluno:</label>
+      <input type="text" id="nome" placeholder="Digite o nome do aluno" />
 
-</body>
+      <h4>Séries</h4>
+      <h5>Ensino Fundamental - 1</h5>
+      <input type="radio" name="serie" value="1º Ano" /> 1º Ano
+      <input type="radio" name="serie" value="2º Ano" /> 2º Ano
+      <input type="radio" name="serie" value="3º Ano" /> 3º Ano
+      <input type="radio" name="serie" value="4º Ano" /> 4º Ano
+      <input type="radio" name="serie" value="5º Ano" /> 5º Ano
+
+      <h5>Ensino Fundamental - 2</h5>
+      <input type="radio" name="serie" value="6º Ano" /> 6º Ano
+      <input type="radio" name="serie" value="7º Ano" /> 7º Ano
+      <input type="radio" name="serie" value="8º Ano" /> 8º Ano
+      <input type="radio" name="serie" value="9º Ano" /> 9º Ano
+
+      <h5>Ensino Médio</h5>
+      <input type="radio" name="serie" value="1º Ano EM" /> 1º Ano EM
+      <input type="radio" name="serie" value="2º Ano EM" /> 2º Ano EM
+      <input type="radio" name="serie" value="3º Ano EM" /> 3º Ano EM
+
+      <h4>Turma</h4>
+      <input type="radio" name="turma" value="A" /> A
+      <input type="radio" name="turma" value="B" /> B
+      <input type="radio" name="turma" value="C" /> C
+      <input type="radio" name="turma" value="D" /> D
+
+      <h4>Disciplina</h4>
+      <label for="disciplina">Selecione a disciplina:</label>
+      <select id="disciplina">
+        <option value="">-- Escolha uma disciplina --</option>
+        <option value="mat">Matemática</option>
+        <option value="lp">Língua Portuguesa</option>
+        <option value="hist">História</option>
+        <option value="geo">Geografia</option>
+        <option value="filo">Filosofia</option>
+        <option value="socio">Sociologia</option>
+        <option value="art">Artes</option>
+        <option value="qui">Química</option>
+        <option value="fis">Física</option>
+        <option value="bio">Biologia</option>
+        <option value="ef">Educação Física</option>
+      </select>
+
+      <h4>Atividades</h4>
+      <input type="text" id="licao" placeholder="Digite a atividade" />
+      <input
+        type="number"
+        id="nota"
+        placeholder="Digite a nota (0 a 10)"
+        min="0"
+        max="10"
+      />
+
+      <button id="botaoAdicionar">Adicionar</button>
+      <button id="botaoMedia">Calcular Média</button>
+    
+    </main>
+
+    <footer>
+      <p>Grupo do Noah - 2025</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -19,6 +19,8 @@ botao.addEventListener("click", () => {
     resultado.appendChild(nota)
 })
 
+const a = a
+
 // const nota = inputNota.value.map(p => Number(p.trim()));
 //     soma = nota.reduce((nota, acumulo) => nota + acumulo, 0)
 //     const media = document.createElement("p")

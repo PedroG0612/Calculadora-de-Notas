@@ -1,3 +1,4 @@
+
 const inputNome = document.getElementById("nome")
 const inputLicao = document.getElementById("licao")
 const inputNota = document.getElementById("nota")
@@ -6,16 +7,26 @@ const mediaArea = document.getElementById("media")
 const notas = document.getElementById("notas")
 const botaoAdicionar = document.getElementById("botaoAdicionar")
 const botaoMedia = document.getElementById("botaoMedia")
+const botaoResetar = document.getElementById("botaoResetar")
 const notasArray = []
 
-botaoAdicionar.addEventListener("click", () => {
-    const aluno = document.createElement("p")
-    aluno.textContent = inputNome.value
+
+function criarElemento(){
+    const nome = document.createElement("p")
+    const atividade = document.createElement("p")
+    const nota = document.createElement("p")
+
+}
+
+botaoAdicionar.addEventListener("click", callback, () => {
+    criarElemento()
+    const nome = document.createElement("p")
+    nome.textContent = inputNome.value
     const atividade = document.createElement("p")
     atividade.textContent = inputLicao.value
     const nota = document.createElement("p")
     nota.textContent = Number(inputNota.value)
-    resultado.appendChild(aluno)
+    resultado.appendChild(nome)
     resultado.appendChild(atividade)
     resultado.appendChild(nota)
     notasArray.push(Number(inputNota.value))
@@ -40,3 +51,8 @@ botaoMedia.addEventListener("click", () => {
 })
 
 
+botaoResetar.addEventListener("click", () => {
+    mediaArea.removeChild(media)
+    mediaArea.removeChild(aluno)
+    resultado.removeChild(nome, atividade, nota)
+})

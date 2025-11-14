@@ -22,12 +22,13 @@ botaoAdicionar.addEventListener("click", () => {
     console.log(notasArray)
 })
 
+const media = document.createElement("p")
+const aluno = document.createElement("p")
+
 botaoMedia.addEventListener("click", () => {
     soma = notasArray.reduce((nota, acumulo) => nota + acumulo, 0)
-    const media = document.createElement("p")
     media.textContent = (soma / notasArray.length).toFixed(2)
     valorMedia = (soma / notasArray.length).toFixed(2)
-    const aluno = document.createElement("p")
     aluno.textContent = inputNome.value
     mediaArea.appendChild(aluno)
     mediaArea.appendChild(media)

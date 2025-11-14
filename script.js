@@ -26,15 +26,15 @@ botaoMedia.addEventListener("click", () => {
     soma = notasArray.reduce((nota, acumulo) => nota + acumulo, 0)
     const media = document.createElement("p")
     media.textContent = (soma / notasArray.length).toFixed(2)
+    valorMedia = (soma / notasArray.length).toFixed(2)
     const aluno = document.createElement("p")
     aluno.textContent = inputNome.value
     mediaArea.appendChild(aluno)
     mediaArea.appendChild(media)
-    if (media > 7){
-        mediaArea.style.backgroundColor = green
+    if (valorMedia >= 7){
+        mediaArea.style.backgroundColor = "green"
     }else{
-        mediaArea.style.backgroundColor = red
-
+        mediaArea.style.backgroundColor = "red"
     }
 })
 

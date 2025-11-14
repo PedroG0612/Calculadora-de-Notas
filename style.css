@@ -1,0 +1,124 @@
+/* ---------- PALETA ----------
+Azul escuro: #1E3A8A
+Azul claro:  #3B82F6
+Verde:       #10B981
+Cinza claro: #F3F4F6
+Branco:      #FFFFFF
+-------------------------------- */
+
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #F3F4F6;
+    color: #1E3A8A;
+    padding-bottom: 50px;
+}
+
+/* Header */
+header {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    border-bottom: 4px solid #3B82F6;
+}
+
+header img {
+    height: 70px;
+}
+
+/* Conteúdo principal */
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+#titulo {
+    text-align: center;
+    font-size: 28px;
+    color: #1E3A8A;
+}
+
+#subtitulo {
+    text-align: center;
+    font-size: 20px;
+    color: #3B82F6;
+    margin-bottom: 20px;
+}
+
+/* Labels e Inputs */
+label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 2px solid #3B82F6;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #10B981;
+    outline: none;
+}
+
+/* Radios */
+h4, h5 {
+    margin-top: 20px;
+    color: #1E3A8A;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+    accent-color: #3B82F6;
+}
+
+/* Botão */
+#botaoAdicionar, #botaoMedia {
+    width: 100%;
+    padding: 12px;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#botao:hover {
+    background: #0a8c63;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    color: #1E3A8A;
+    font-weight: bold;
+}

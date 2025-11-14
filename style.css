@@ -1,124 +1,230 @@
-/* ---------- PALETA ----------
-Azul escuro: #1E3A8A
-Azul claro:  #3B82F6
-Verde:       #10B981
-Cinza claro: #F3F4F6
-Branco:      #FFFFFF
--------------------------------- */
+/* Importa fonte bonita */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-/* Geral */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Tipografia geral */
 body {
-    background: #F3F4F6;
-    color: #1E3A8A;
-    padding-bottom: 50px;
+  font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: #f3f4f6;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  padding-bottom: 0%;
 }
 
-/* Header */
+/* HEADER */
 header {
-    background: #1E3A8A;
-    color: #FFFFFF;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-    border-bottom: 4px solid #3B82F6;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(2,6,23,0.12);
 }
 
-header img {
-    height: 70px;
-}
-
-/* Conteúdo principal */
-main {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    background: #FFFFFF;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Títulos */
+/* TITULOS */
 #titulo {
-    text-align: center;
-    font-size: 28px;
-    color: #1E3A8A;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
 }
-
 #subtitulo {
-    text-align: center;
-    font-size: 20px;
-    color: #3B82F6;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+  color: #475569;
+  font-weight: 600;
 }
 
-/* Labels e Inputs */
-label {
-    font-weight: bold;
-    margin-top: 15px;
-    display: block;
+/* MAIN (form) */
+main {
+  width: 92%;
+  max-width: 920px;
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
 }
 
-input[type="text"],
-input[type="number"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0 15px 0;
-    border: 2px solid #3B82F6;
-    border-radius: 8px;
-    transition: .2s;
+/* Labels e títulos das seções */
+label, h4, h5 {
+  display: block;
+  margin-top: 16px;
+  font-weight: 700;
+  color: #0f172a;
 }
+h5 { margin-top: 10px; font-size: 0.98rem; }
 
-input:focus,
-select:focus {
-    border-color: #10B981;
-    outline: none;
+/* Inputs (form) */
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 2px solid #e6eef8;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.18s;
+  background: #fbfdff;
 }
+input:focus, select:focus { border-color: #3b82f6; box-shadow: 0 6px 18px rgba(59,130,246,0.06); }
 
 /* Radios */
-h4, h5 {
-    margin-top: 20px;
-    color: #1E3A8A;
+input[type="radio"] { margin-right: 8px; accent-color: #1e3a8a; transform: scale(1.15); }
+
+/* Botões */
+button {
+  margin-top: 18px;
+  margin-right: 10px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.18s;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+}
+#botaoAdicionar { background: #16a34a; color: white; }
+#botaoAdicionar:hover { transform: translateY(-2px); filter: brightness(0.96); }
+#botaoMedia { background: #1e3a8a; color: white; }
+#botaoMedia:hover { transform: translateY(-2px); filter: brightness(0.96); }
+
+/* ---------- RESULTADOS: área centralizada e mais cheia ---------- */
+#resultados {
+  width: 92%;
+  max-width: 920px;
+  margin: 22px auto;
+  background: transparent; /* deixamos transparente para que os "cards" se destaquem */
+  padding: 0;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* nome | atividade | nota */
+  gap: 0; /* sem gap para parecer um único card por linha */
+  align-items: stretch;
+  /* garante que ocupe espaço vertical e não fique pequenininho */
+  min-height: 60px;
 }
 
-input[type="radio"] {
-    margin-right: 6px;
-    accent-color: #3B82F6;
+/* Cada <p> criado pelo JS vira uma célula da grade.
+   Os itens aparecem em sequência e a cada 3 itens formam uma "linha" (card). */
+#resultados p {
+  margin: 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(2,6,23,0.06);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(2,6,23,0.04);
 }
 
-/* Botão */
-#botaoAdicionar, #botaoMedia {
-    width: 100%;
-    padding: 12px;
-    background: #10B981;
-    color: #FFFFFF;
-    font-size: 18px;
-    border: none;
+/* estilização para que a linha inteira pareça um único container:
+   - o primeiro item da linha tem borda arredondada à esquerda,
+   - o último item tem borda arredondada à direita,
+   - o item do meio fica "colado" entre os dois. */
+#resultados p:nth-child(3n+1) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: linear-gradient(180deg,#fbfdff,#f8fbff);
+  font-size: 1.12rem; /* NOME: maior */
+}
+#resultados p:nth-child(3n+2) {
+  border-left: none;
+  border-right: none;
+  background: linear-gradient(180deg,#ffffff,#fbfbff);
+  font-size: 1.02rem; /* ATIVIDADE: normal */
+  font-weight: 600;
+  color: #334155;
+}
+#resultados p:nth-child(3n) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: linear-gradient(180deg,#ffffff,#f7fbff);
+  justify-content: center;
+  font-size: 1.18rem; /* NOTA: mais destacada */
+  font-weight: 800;
+  color: #0b1220;
+}
+
+/* deixa o texto da nota maior e verticalmente centralizado */
+#resultados p:nth-child(3n) span, #resultados p:nth-child(3n) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* responsividade: em telas menores, empilha cada "card" em linhas de 1 coluna */
+@media (max-width: 720px) {
+  #resultados {
+    grid-template-columns: 1fr; /* cada <p> vira linha; teremos 3 linhas por atividade */
+    gap: 10px;
+  }
+  #resultados p {
     border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: .3s;
+  }
+  /* ajusta tamanhos */
+  #resultados p:nth-child(3n+1) { font-size: 1.05rem; }
+  #resultados p:nth-child(3n+2) { font-size: 0.98rem; color: #334155; }
+  #resultados p:nth-child(3n) { font-size: 1.12rem; font-weight: 800; }
 }
 
-#botao:hover {
-    background: #0a8c63;
+/* ---------- CONTAINER DE MÉDIA CENTRALIZADO ---------- */
+#media {
+  width: 92%;
+  max-width: 420px;
+  margin: 18px auto 28px auto;
+  background: #ffffff;
+  padding: 18px 22px 18px 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.06);
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #0f172a;
+  position: relative;
 }
 
-/* Footer */
+/* adiciona o rótulo 'Média:' antes do valor (o JS coloca apenas o número) */
+#media::before {
+  content: "Média:";
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* formatação do valor numérico dentro de #media (o parágrafo criado pelo JS) */
+#media p {
+  margin: 0;
+  padding-top: 6px;
+  font-size: 1.6rem;
+  color: #0b1220;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- FOOTER ---------- */
 footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    color: #1E3A8A;
-    font-weight: bold;
+  text-align: center;
+  padding: 14px;
+  margin-top: 18px;
+  background: #1e3a8a;
+  color: white;
+  font-size: 0.95rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
+
+/* pequenos ajustes estéticos finais */
+main, #resultados, #media { transition: all 160ms ease; }

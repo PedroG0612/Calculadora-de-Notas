@@ -11,15 +11,8 @@ const botaoResetar = document.getElementById("botaoResetar")
 const notasArray = []
 
 
-function criarElemento(){
-    const nome = document.createElement("p")
-    const atividade = document.createElement("p")
-    const nota = document.createElement("p")
 
-}
-
-botaoAdicionar.addEventListener("click", callback, () => {
-    criarElemento()
+botaoAdicionar.addEventListener("click", () => {
     const nome = document.createElement("p")
     nome.textContent = inputNome.value
     const atividade = document.createElement("p")
@@ -52,7 +45,5 @@ botaoMedia.addEventListener("click", () => {
 
 
 botaoResetar.addEventListener("click", () => {
-    mediaArea.removeChild(media)
-    mediaArea.removeChild(aluno)
-    resultado.removeChild(nome, atividade, nota)
+    location.reload()
 })

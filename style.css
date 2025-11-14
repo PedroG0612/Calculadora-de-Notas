@@ -18,12 +18,18 @@ body {
 header {
   background: linear-gradient(90deg, #1e3a8a, #3b82f6);
   color: white;
-  padding: 16px 22px;
+  padding: 8px 22px;
   display: flex;
   align-items: center;
   font-size: 1.25rem;
   font-weight: 700;
   box-shadow: 0 2px 8px rgba(2,6,23,0.12);
+  gap: 10px;
+}
+
+header img{
+    width: 70px;
+    height: 70px;
 }
 
 /* TITULOS */
